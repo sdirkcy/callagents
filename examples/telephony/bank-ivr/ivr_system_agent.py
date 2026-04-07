@@ -97,10 +97,9 @@ async def collect_digits(
 
 
 async def add_event_message(agent: Agent, *, content: str) -> None:
-    agent.chat_ctx.copy().add_message(
-        role="user", content=f"<system_event>{content}</system_event>"
-    )
-    await agent.update_chat_ctx(agent.chat_ctx)
+    new_ctx = agent.chat_ctx.copy()
+    new_ctx.add_message(role="user", content=f"<system_event>{content}</system_event>")
+    await agent.update_chat_ctx(new_ctx)
 
 
 async def run_menu(

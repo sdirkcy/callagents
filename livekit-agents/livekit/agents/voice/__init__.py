@@ -23,6 +23,22 @@ from .room_io import (
     _ParticipantTranscriptionOutput,
 )
 from .speech_handle import SpeechHandle
+from .telephony import (
+    CallerInfo,
+    CallQueue,
+    CallSummary,
+    QueueEntry,
+    QueueStatus,
+    extract_caller_info,
+    extract_caller_info_from_room,
+    format_phone_number,
+    get_queue,
+    get_sip_header,
+    get_sip_headers,
+    normalize_phone_number,
+    create_simple_summary,
+    generate_call_summary,
+)
 from .transcription import TranscriptSynchronizer, text_transforms
 
 __all__ = [
@@ -55,6 +71,20 @@ __all__ = [
     "_ParticipantTranscriptionOutput",
     "_ParticipantStreamTranscriptionOutput",
     "text_transforms",
+    "CallerInfo",
+    "CallQueue",
+    "CallSummary",
+    "QueueEntry",
+    "QueueStatus",
+    "extract_caller_info",
+    "extract_caller_info_from_room",
+    "format_phone_number",
+    "get_queue",
+    "get_sip_header",
+    "get_sip_headers",
+    "normalize_phone_number",
+    "create_simple_summary",
+    "generate_call_summary",
 ]
 
 # Cleanup docs of unexported modules

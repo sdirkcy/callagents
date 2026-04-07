@@ -192,7 +192,7 @@ class WarmTransferTask(AgentTask[WarmTransferResult]):
                 return_when=asyncio.FIRST_COMPLETED,
             )
             if dial_human_agent_task not in done:
-                raise RuntimeError()
+                raise RuntimeError("Dialing human agent timed out or failed")
 
             self._human_agent_sess = dial_human_agent_task.result()
             # let the human speak first
